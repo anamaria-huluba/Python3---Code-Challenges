@@ -210,7 +210,7 @@ total_sales = 0
 Iterate through sales and for each item, strip off the $, set it equal to a float, and add it to total_sales
 
 total_sales = 0
-for sale in total_slaes:
+for sale in total_sales:
   total_sales += float(sale.strip("$"))
   
 15. Print total sales.

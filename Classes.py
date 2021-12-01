@@ -1,7 +1,6 @@
 # 1. Setting Up Our Robot
 
-# Let’s begin by creating the class for our robot. We will begin by setting up the instance variables 
-# to keep track of important data related to the robot. 
+# Let’s begin by creating the class for our robot. We will begin by setting up the instance variables to keep track of important data related to the robot. 
 
 # Here are the steps we need to do:
 # Create a new class called DriveBot
@@ -25,16 +24,13 @@ print(robot_1.motor_speed)
 print(robot_1.direction)
 print(robot_1.sensor_range)
 
-# This shows the structure of a simple class which only contains instance variables. The three instance 
-# variables are set to 0 for now, which means that they can only be changed by manually by accessing 
-# them from an object of the DriveBot class.
+# This shows the structure of a simple class which only contains instance variables. The three instance variables are set to 0 for now, which means that they can only be 
+# changed by manually by accessing them from an object of the DriveBot class.
 
 # 2. Adding Robot Logic
 
-# Now we want to add some logic to our robot. It would be very useful to be able to control our robot, 
-# say we are going to create a control_bot method which changes the speed and direction. We are also 
-# going to create a method called adjust_sensor. This method is used to change the range of our robot’s 
-# sensors which are used to detect obstacles. 
+# Now we want to add some logic to our robot. It would be very useful to be able to control our robot, say we are going to create a control_bot method which changes the speed 
+# and direction. We are also going to create a method called adjust_sensor. This method is used to change the range of our robot’s sensors which are used to detect obstacles. 
 
 # Here are the steps:
 # Define a function within the DriveBot class which accepts two additional parameters: one for a new 
@@ -65,16 +61,13 @@ print(robot_1.motor_speed)
 print(robot_1.direction)
 print(robot_1.sensor_range)
 
-#These two methods were added inside of the DriveBot class. They are used to replace the instance 
-# variables with new values from the input parameters. We use self.variable_name to access a certain 
-# instance variable within the class.
+#These two methods were added inside of the DriveBot class. They are used to replace the instance variables with new values from the input parameters. We use self.variable_name 
+# to access a certain instance variable within the class.
 
 # 3. Enhanced Constructor
 
-# It can be tedious manually setting the values for each instance variable after we have created an 
-# object from the DriveBot class. We can enhance our constructor to automatically assign the values we 
-# provide to the instance variables. Instead of taking zero parameters, we are going to make the 
-# constructor take three parameters. 
+# It can be tedious manually setting the values for each instance variable after we have created an object from the DriveBot class. We can enhance our constructor to 
+# automatically assign the values we provide to the instance variables. Instead of taking zero parameters, we are going to make the constructor take three parameters. 
 
 # Here is what we need to do:
 # Modify the constructor to take three parameters (in addition to self): one for motor_speed, one 
@@ -113,9 +106,8 @@ print(robot_2.motor_speed)
 print(robot_2.direction)
 print(robot_2.sensor_range)
 
-# This upgraded constructor includes input parameters as well as default values for those parameters. 
-# This means that if no value is provided for those parameters, then the value they are set equal to 
-# will be used. Here are some examples of different ways I used the constructor:
+# This upgraded constructor includes input parameters as well as default values for those parameters. This means that if no value is provided for those parameters, then the 
+# value they are set equal to will be used. Here are some examples of different ways I used the constructor:
 
 # sensor_range defaults to 10
 robot_2 = DriveBot(10, 270) 
@@ -134,9 +126,8 @@ robot_2 = DriveBot(18, 95, 30)
 
 # 4. Controlling Them All
 
-# We want to add a new feature which allows the use to control multiple robots at once. The robots should 
-# be able to all have the same latitude and longitude GPS destination coordinates as well as a setting for 
-# disabling them all called all_disabled. We can accomplish this using class variables. 
+# We want to add a new feature which allows the use to control multiple robots at once. The robots should be able to all have the same latitude and longitude GPS destination 
+# coordinates as well as a setting for disabling them all called all_disabled. We can accomplish this using class variables. 
 
 # Here is how we can do it:
 # Create a new class variable within the DriveBot class called all_disabled and set it equal to False
@@ -171,13 +162,11 @@ robot_1.sensor_range = 10
 robot_2 = DriveBot(35, 75, 25)
 robot_3 = DriveBot(20, 60, 10)
 
-# I placed the class variables at the top of the class outside of the constructor. These variables 
-# can be accessed within the scope of the entire class. This means that the class variables contained 
-# within every object from the DriveBot class will change if we modify the class variable directly. 
+# I placed the class variables at the top of the class outside of the constructor. These variables can be accessed within the scope of the entire class. This means that the 
+# class variables contained within every object from the DriveBot class will change if we modify the class variable directly. 
 # 
 # Here is an example of how to change each of these class variables:
-# Changed latitude, longitude, and all_disabled values for all three robots using only three lines 
-# of code!
+# Changed latitude, longitude, and all_disabled values for all three robots using only three lines of code!
 
 DriveBot.longitude = -79.98553
 DriveBot.latitude = 40.60793
@@ -189,10 +178,8 @@ print(robot_3.all_disabled)
 
 # 5. Identifying Robots
 
-# In order to keep track of the robots we are creating, we want to be able to assign an ID value to 
-# each robot when it is created. If we create five robots in a row, we want the IDs of each robot to be 1, 
-# 2, 3, 4, and 5 respectively. This can be accomplished by using a class variable counter which 
-# increments and is assigned to an instance variable for the ID whenever the constructor is called. 
+# In order to keep track of the robots we are creating, we want to be able to assign an ID value to each robot when it is created. If we create five robots in a row, we want 
+# the IDs of each robot to be 1, 2, 3, 4, and 5 respectively. This can be accomplished by using a class variable counter which increments and is assigned to an instance variable for the ID whenever the constructor is called. 
 
 # Here are the steps:
 # Create a new class variable in the DriveBot class called robot_count
@@ -234,26 +221,20 @@ robot_3 = DriveBot(20, 60, 10)
 # print(robot_2.id)
 # print(robot_3.id)
 
-# The final modifications to this class can be seen at the top of the class and in the constructor. 
-# We use a class variable to keep track of the total number of robots. This information is shared across 
-# all robot objects we create from the class. Every time a robot object is created, the constructor is 
-# called and the count is incremented. Each robot has an instance variable for id which is local to that 
-# robot object. This is assigned at the time of construction and stores what the count was at that time.
+# The final modifications to this class can be seen at the top of the class and in the constructor. We use a class variable to keep track of the total number of robots. This 
+# information is shared across all robot objects we create from the class. Every time a robot object is created, the constructor is called and the count is incremented. Each 
+# robot has an instance variable for id which is local to that robot object. This is assigned at the time of construction and stores what the count was at that time.
 
 # Python Code Challenges: Classes (Advanced)
 
-#You have created a robotics company which began with four-wheeled driving robots, but you are now expanding 
-# the technology to include bipedal robots. Since a lot of robotic logic already exists from the driving 
-# robot, we can modularize the robot class structure using object oriented programming concepts such as 
-# inheritance. These five advanced challenge problems will test your knowledge of classes and interactions 
-# between multiple classes.
+#You have created a robotics company which began with four-wheeled driving robots, but you are now expanding the technology to include bipedal robots. Since a lot of robotic 
+# logic already exists from the driving robot, we can modularize the robot class structure using object oriented programming concepts such as inheritance. These five advanced 
+# challenge problems will test your knowledge of classes and interactions between multiple classes.
 
 # 1. Robot Inheritance
 
-# The generic variables and methods have been placed into a Robot class for you. You will need to create 
-# two new classes. One for DriveBot and one for WalkBot. Both of these should inherit from the Robot 
-# class. The constructor for the DriveBot will be essentially the same as the superclass constructor, 
-# but the WalkBot constructor will include an extra parameter for an instance variable called step_length. 
+# The generic variables and methods have been placed into a Robot class for you. You will need to create two new classes. One for DriveBot and one for WalkBot. Both of these should inherit from the Robot 
+# class. The constructor for the DriveBot will be essentially the same as the superclass constructor, but the WalkBot constructor will include an extra parameter for an instance variable called step_length. 
 
 # Here is what we need to do:
 # Create a new class called DriveBot which inherits from the Robot class
@@ -311,10 +292,8 @@ print(robot_3.step_length)
 print(robot_1.speed)
 # reurns: 0
 
-# By placing Robot in the parentheses next to the two new classes, we cause them to inherit from the 
-# Robot class. We can use super().__init__(self, param_1, param_2, etc...) to call the superclass 
-# constructor. This will use the constructor in the Robot class to assign the values to the instance 
-# variables. Any new changes can then be added afterward.
+# By placing Robot in the parentheses next to the two new classes, we cause them to inherit from the Robot class. We can use super().__init__(self, param_1, param_2, etc...) 
+# to call the superclass constructor. This will use the constructor in the Robot class to assign the values to the instance variables. Any new changes can then be added afterward.
 
 # 2. Using The Superclass
 
@@ -388,16 +367,13 @@ print(robot_walk.sensor_range)
 print(robot_walk.obstacle_found)
 print(robot_walk.step_length)
 
-# As you can see, in order to override the method, we can re-define it again with the same name. You can 
-# use super().method_name() in order to call the superclass version of the method.
+# As you can see, in order to override the method, we can re-define it again with the same name. You can use super().method_name() in order to call the superclass version of the method.
 
 # 3. Conditional Superclass Logic
 
-# Since the bipedal robot is a bit less stable, the obstacle avoidance must be more delicate. Because of 
-# this, we want to call the superclass method for avoiding obstacles within the bipedal robot class if the 
-# steps per minute are less than or equal to 60, otherwise the WalkBot should only rotate 90 degrees 
-# clockwise and set obstacle_found to False. In either case, we need to half the robot’s speed and 
-# step_length in order to slow it down during the turn. 
+# Since the bipedal robot is a bit less stable, the obstacle avoidance must be more delicate. Because of this, we want to call the superclass method for avoiding obstacles 
+# within the bipedal robot class if the steps per minute are less than or equal to 60, otherwise the WalkBot should only rotate 90 degrees clockwise and set obstacle_found to 
+# False. In either case, we need to half the robot’s speed and step_length in order to slow it down during the turn. 
 
 # Here are the steps we need to do:
 # Within the WalkBot class, override the method called avoid_obstacles by re-defining it in the class.
@@ -487,18 +463,15 @@ print(robot_2.speed)
 print(robot_2.step_length)
 # returns: 20.0
 
-# This method shows how the superclass method can be called conditionally. In this case it depends on 
-# the speed of the robot and if an obstacle was found. We use modulus when rotating the robot to loop 
-# back past 0 if we go over 360 degrees. This is because the robot would have made a full circle.
+# This method shows how the superclass method can be called conditionally. In this case it depends on the speed of the robot and if an obstacle was found. We use modulus when 
+# rotating the robot to loop back past 0 if we go over 360 degrees. This is because the robot would have made a full circle.
 
 # 4. Overriding Dunder Methods
 
-# Let’s add an easy way to increase and decrease our speed as well as some other attributes depending on 
-# the type of robot. For the Robot class, we want to increase and decrease the speed using the + and - 
-# operators. For the DriveBot class, we want to adjust the speed and sensor_range with those operators. 
-# Lastly, for the WalkBot class, we want to adjust the speed and step_length with those operators. We can 
-# override the dunder methods which represent those operations and call the superclass version of those 
-# dunder methods. 
+# Let’s add an easy way to increase and decrease our speed as well as some other attributes depending on the type of robot. For the Robot class, we want to increase and 
+# decrease the speed using the + and - operators. For the DriveBot class, we want to adjust the speed and sensor_range with those operators. Lastly, for the WalkBot class, 
+# we want to adjust the speed and step_length with those operators. We can override the dunder methods which represent those operations and call the superclass version of 
+# those dunder methods. 
 
 # Here are the steps:
 # In the Robot class, override the + operator to add to the speed of the robot
@@ -609,22 +582,19 @@ print(robot_2.speed)
 print(robot_2.step_length)
 # returns: 7.5
 
-# The above code only shows the dunder methods which were added to each class. The child classes both 
-# override those operations as well. This shows how superclass versions of dunder methods can also be 
-# called from a child class.
+# The above code only shows the dunder methods which were added to each class. The child classes both override those operations as well. This shows how superclass versions of 
+# dunder methods can also be called from a child class.
 
 # 5. Prevent A Robot Takeover
 
-# Finally, we are going to make some last additions to our bipedal robot and test it out. Your customers 
-# are worried that your new robot model might become sentient when controlled in large numbers. To prevent
-# this, program the bipedal robots so that if five WalkBots are created when there are already at least 
-# 5 DriveBots (causing 10 or more total bots) then disable all robots. 
+# Finally, we are going to make some last additions to our bipedal robot and test it out. Your customers are worried that your new robot model might become sentient when 
+# controlled in large numbers. To prevent this, program the bipedal robots so that if five WalkBots are created when there are already at least 5 DriveBots (causing 10 or more 
+# total bots) then disable all robots. 
 
 # This is what you need to do:
 # Create a new class variable in the WalkBot class to count the number of WalkBot instances
 # In the constructor for the WalkBot, increment the counter by 1
-# Also, in the constructor, check if the number of total Robots (from the superclass) is greater than or 
-# equal to 10 and if the number of WalkBots is greater than or equal to 5.
+# Also, in the constructor, check if the number of total Robots (from the superclass) is greater than or equal to 10 and if the number of WalkBots is greater than or equal to 5.
 # If so, disable all robots
 
 class Robot:
@@ -729,10 +699,8 @@ class WalkBot(Robot):
         if(WalkBot.walk_bot_count >= 5 and Robot.robot_count >= 10):
            Robot.all_disabled = True
 
-# This modification uses a similar method of counting from the Robot class, but it uses a separate 
-# counter to only track the number of WalkBots. Whenever a new WalkBot is created, the constructor is 
-# called and the two counts are checked. If the total number of robots is at least 10 and the number 
-# of WalkBots reaches 5 then all robots are disabled.
+# This modification uses a similar method of counting from the Robot class, but it uses a separate counter to only track the number of WalkBots. Whenever a new WalkBot is 
+# created, the constructor is called and the two counts are checked. If the total number of robots is at least 10 and the number of WalkBots reaches 5 then all robots are disabled.
 
 class Robot:
     all_disabled = False
@@ -828,10 +796,8 @@ robot_10 = WalkBot()
 print(Robot.all_disabled)
 # returns: False
 
-# This modification uses a similar method of counting from the Robot class, but it uses a separate 
-# counter to only track the number of WalkBots. Whenever a new WalkBot is created, the constructor is 
-# called and the two counts are checked. If the total number of robots is at least 10 and the number of 
-# WalkBots reaches 5 then all robots are disabled.
+# This modification uses a similar method of counting from the Robot class, but it uses a separate counter to only track the number of WalkBots. Whenever a new WalkBot is 
+# created, the constructor is called and the two counts are checked. If the total number of robots is at least 10 and the number of WalkBots reaches 5 then all robots are disabled.
 
 
 

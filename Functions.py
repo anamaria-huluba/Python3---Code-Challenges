@@ -26,9 +26,10 @@ print(tenth_power(2))
 # This is one way to solve this problem using two lines of code.
 # The first line is the function header which uses def to define the function followed by the function name. Within the parentheses we include num which is our formal parameter.
 # Because of this, num is the variable name for the value we pass into this function.
-# On our next line, we use return to show that this function is going to return a value when it is called. Next to the return keyword, we define what value is going to be returned.
-# Since we need the tenth power of our input value, we can use the power operator in python which is **. Using this knowledge, in order to get the tenth power of our input value, 
-# we use num ** 10.
+# On our next line, we use return to show that this function is going to return a value when it is called. Next to the return keyword, we define what value is going to be 
+# returned.
+# Since we need the tenth power of our input value, we can use the power operator in python which is **. Using this knowledge, in order to get the tenth power of our input 
+# value, we use num ** 10.
 
 # 2. Square Root
 # Another useful function for solving math problems is the square root function. We can create this using similar steps from the last problem. The code will look very similar. 
@@ -87,7 +88,8 @@ print(win_percentage(10, 0))
 # a ratio and we want it in percentage form, we multiply the answer by 100 and return it.
 
 # 4. Average
-# Let’s create a function which takes the average of two numbers. These two numbers will be the input of the function and the output will be the average of the two. In order to do this, we need to do a few steps:
+# Let’s create a function which takes the average of two numbers. These two numbers will be the input of the function and the output will be the average of the two. In order 
+# to do this, we need to do a few steps:
 
 # Define the function with two input parameters, num1 and num2
 # Calculate the sum of the two numbers

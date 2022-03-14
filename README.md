@@ -1,6 +1,6 @@
 # Python Code Challenges with Codecademy
 
-You got an introduction to fundamental programming concepts and the Python programming language syntax. More specifically, you learned about:
+I got an introduction to fundamental programming concepts and the Python programming language syntax. More specifically, I learned about:
 
 How to write Python syntax to print and work with user input
 How to use Python control flow, boolean variables, and logic operators to create programs that can make dynamic decisions

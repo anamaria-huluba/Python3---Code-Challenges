@@ -117,6 +117,10 @@ OR using a list comprehension
 def values_that_are_keys(my_dictionary):
   return [v for k, v in my_dictionary.items() if v in my_dictionary.keys()]
 
+OR
+def values_that_are_keys(my_dictionary):
+  return [value for key, value in my_dictionary.items() if value in my_dictionary.keys()]
+
 print(values_that_are_keys({1:100, 2:1, 3:4, 4:10}))
 # returns: [1, 4]
 print(values_that_are_keys({"a":"apple", "b":"a", "c":100}))

@@ -186,6 +186,11 @@ Check if the name is within the sentence. If so, then return True. Otherwise, re
 def check_for_name(sentence, name):
   return name.lower() in sentence.lower()
 
+OR
+def check_for_name(sentence, name):
+  return True if sentence.lower().find(name.lower()) > 0
+  else False
+
 print(check_for_name("My name is Jamie", "Jamie"))
 # returns: print True
 print(check_for_name("My name is jamie", "Jamie"))
@@ -215,6 +220,10 @@ def every_other_letter(word):
   for letter in range(0, len(word), 2):
     every_other_letter_str += word[letter]
   return every_other_letter_str
+
+OR using slicing
+def every_other_letter(word):
+  return word[::2]
 
 print(every_other_letter("Codecademy"))
 # should print Cdcdm
@@ -305,6 +314,14 @@ Once done, return the result
 def add_exclamation(word):
   while(len(word) < 20):
     word += "!"
+  return word
+
+OR using a for loop
+def add_exclamation(word):
+  word_len = len(word)
+  if word_len <20:
+    for i in range(len(word), 20):
+      word += "!"
   return word
 
 print(add_exclamation("Codecademy"))
